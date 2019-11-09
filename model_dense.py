@@ -2,7 +2,7 @@ from tensorflow.keras import layers, models
 from tensorflow.keras.optimizers import Adam
 
 from model import Model
-class Dense(model):
+class Dense(Model):
     def __init__(self, input_shape):
         super().__init__(input_shape)
 
@@ -13,9 +13,9 @@ class Dense(model):
         dense2 = layers.Dense(20, activation = 'relu')(dense1)
         dense3 = layers.Dense(1, activation = 'sigmoid')(dense2)
 
-        self.model = models.Model(inputs = inputs, outputs = outputs)
+        self.model = models.Model(inputs = inputs, outputs = dense3)
         super().build()
 
     def compile(self):
-        self.model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy']
+        self.model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
         super().compile()

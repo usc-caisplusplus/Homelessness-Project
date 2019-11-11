@@ -1,6 +1,6 @@
 import csv
 import numpy as np
-csvName = "Unsheltered Adult VISPDAT Data.csv"
+csvName = "dataset/Unsheltered Adult VISPDAT Data.csv"
 
 input_columns = [1, 3, 5, 6, 8, 9, 10, 11, 12, 15, 16, 18, 20, 21, 23, 24, 26, 28, 30, 32, 33, 34, 35, 36, 37, 39, 40, 42, 43, 44, 45, 48, 49, 50, 52, 55, 56, 58, 72, 73, 74]
 output_columns = [59]
@@ -85,6 +85,6 @@ print('Final output, shape = {}'.format(output_data.shape))
 print(output_data[:5])
 print('')
 
-np.save('inputs.npy', input_data)
-np.save('outputs.npy', output_data)
+np.save('dataset/inputs.npy', input_data)
+np.save('dataset/outputs.npy', output_data)
 
